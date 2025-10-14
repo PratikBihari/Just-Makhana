@@ -1,0 +1,12 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#eae8cf"/>
+  <circle cx="180" cy="120" r="12" fill="#DEB887"/>
+  <circle cx="220" cy="120" r="12" fill="#DEB887"/>
+  <circle cx="160" cy="150" r="10" fill="#8B4513"/>
+  <circle cx="200" cy="150" r="10" fill="#32CD32"/>
+  <circle cx="240" cy="150" r="10" fill="#FF6347"/>
+  <circle cx="180" cy="180" r="8" fill="#FFD700"/>
+  <circle cx="220" cy="180" r="8" fill="#9370DB"/>
+  <circle cx="200" cy="200" r="6" fill="#FF4500"/>
+  <text x="200" y="260" font-family="El Messiri, serif" font-size="20" font-weight="600" text-anchor="middle" fill="#385a51">Trail Mix</text>
+</svg>

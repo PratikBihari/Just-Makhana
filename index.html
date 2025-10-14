@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just Makhana - Hand Picked Raw Makhana | Premium Natural Snacks</title>
+    <meta name="description" content="Naturally crisp, farm-sourced, hand-picked raw makhana. Premium quality fox nuts directly from farmers. Shop organic makhana snacks online.">
+    <meta property="og:title" content="Just Makhana - Hand Picked Raw Makhana">
+    <meta property="og:description" content="Naturally crisp. Farm-sourced. Hand-picked.">
+    <meta property="og:image" content="./assets/og-image.svg">
+    <meta property="og:url" content="https://justmakhana.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" type="image/png" href="./assets/logo.png">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="nav container" aria-label="Main navigation">
+            <div class="nav__brand">
+                <div class="logo">
+                    <img src="./assets/logo.png" alt="Just Makhana - Hand Picked Raw Makhana" class="logo__image">
+                    <div class="logo__text-wrapper">
+                        <h1 class="logo__text">Just Makhana</h1>
+                        <p class="logo__tagline">HAND PICKED RAW MAKHANA</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav__menu" role="menubar">
+                <li role="none"><a href="#home" class="nav__link" role="menuitem">Home</a></li>
+                <li role="none"><a href="#shop" class="nav__link" role="menuitem">Shop</a></li>
+                <li role="none"><a href="#about" class="nav__link" role="menuitem">Our Story</a></li>
+                <li role="none"><a href="#recipes" class="nav__link" role="menuitem">Recipes</a></li>
+                <li role="none"><a href="#contact" class="nav__link" role="menuitem">Contact</a></li>
+                <li role="none"><button class="cart-btn" aria-label="Shopping cart">🛒 <span class="cart-count">0</span></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero" role="main">
+        <div class="container">
+            <div class="hero__content">
+                <h2 class="hero__title hero-animate-title">Just Makhana — Hand Picked Raw Makhana</h2>
+                <p class="hero__subtitle hero-animate-subtitle">Naturally crisp. Farm-sourced. Hand-picked.</p>
+                <div class="hero__actions hero-animate-actions">
+                    <a href="#shop" class="btn btn--primary">Shop Raw Makhana</a>
+                    <a href="#about" class="btn btn--secondary">Learn Our Story</a>
+                </div>
+            </div>
+            <div class="hero__image hero-animate-image">
+                <img src="./assets/hero-makhana.svg" alt="Fresh raw makhana in a wooden bowl" loading="eager">
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Categories -->
+    <section id="shop" class="categories">
+        <div class="container">
+            <h2 class="section__title">Shop Premium Makhana</h2>
+            <div class="categories__grid">
+                <div class="category-card" data-aos="fade-up">
+                    <img src="./assets/raw-makhana.svg" alt="Raw makhana" loading="lazy">
+                    <h3>Raw Makhana</h3>
+                    <p>Pure, unprocessed fox nuts</p>
+                    <button class="btn btn--outline" onclick="showProducts('raw')">Shop Now</button>
+                </div>
+                <div class="category-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="./assets/roasted-makhana.svg" alt="Roasted makhana" loading="lazy">
+                    <h3>Roasted Makhana</h3>
+                    <p>Lightly roasted for extra crunch</p>
+                    <button class="btn btn--outline" onclick="showProducts('roasted')">Shop Now</button>
+                </div>
+                <div class="category-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="./assets/flavored-makhana.svg" alt="Flavored makhana varieties" loading="lazy">
+                    <h3>Flavored Varieties</h3>
+                    <p>Natural spices and seasonings</p>
+                    <button class="btn btn--outline" onclick="showProducts('flavored')">Shop Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products" id="products-section" style="display: none;">
+        <div class="container">
+            <div class="products__header">
+                <h2 class="section__title">Our Products</h2>
+                <div class="products__filters">
+                    <select class="filter-select" id="weight-filter" aria-label="Filter by weight">
+                        <option value="">All Weights</option>
+                        <option value="100g">100g</option>
+                        <option value="250g">250g</option>
+                        <option value="500g">500g</option>
+                        <option value="1kg">1kg</option>
+                    </select>
+                    <select class="filter-select" id="price-filter" aria-label="Filter by price">
+                        <option value="">All Prices</option>
+                        <option value="0-200">₹0 - ₹200</option>
+                        <option value="200-500">₹200 - ₹500</option>
+                        <option value="500+">₹500+</option>
+                    </select>
+                </div>
+            </div>
+            <div class="products__grid" id="products-grid">
+                <!-- Products will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section id="about" class="story">
+        <div class="container">
+            <div class="story__content">
+                <div class="story__text">
+                    <h2 class="section__title">Our Story</h2>
+                    <p>From the pristine wetlands of Bihar to your table, every makhana is carefully hand-picked by local farmers who have perfected this art for generations.</p>
+                    <p>We work directly with farming communities, ensuring fair trade practices while maintaining the highest quality standards for our premium makhana.</p>
+                    <div class="sustainability-badge">
+                        <span class="badge__icon">🌱</span>
+                        <span class="badge__text">100% Sustainable Sourcing</span>
+                    </div>
+                </div>
+                <div class="story__image">
+                    <img src="./assets/farmers-story.svg" alt="Local farmers harvesting makhana" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section__title">What Our Customers Say</h2>
+            <div class="testimonials__slider" id="testimonials-slider">
+                <div class="testimonial-card active">
+                    <p>"The quality is exceptional! You can taste the freshness in every bite."</p>
+                    <cite>— Priya S., Mumbai</cite>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Finally found authentic makhana that's as good as homemade."</p>
+                    <cite>— Rajesh K., Delhi</cite>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Perfect for healthy snacking. My kids love them too!"</p>
+                    <cite>— Anita M., Bangalore</cite>
+                </div>
+            </div>
+            <div class="testimonials__dots">
+                <button class="dot active" onclick="showTestimonial(0)" aria-label="Show testimonial 1"></button>
+                <button class="dot" onclick="showTestimonial(1)" aria-label="Show testimonial 2"></button>
+                <button class="dot" onclick="showTestimonial(2)" aria-label="Show testimonial 3"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipes Section -->
+    <section id="recipes" class="recipes">
+        <div class="container">
+            <h2 class="section__title">Recipes & Tips</h2>
+            <div class="recipes__grid">
+                <div class="recipe-card">
+                    <img src="./assets/recipe-1.svg" alt="Spiced makhana recipe" loading="lazy">
+                    <h3>Spiced Makhana</h3>
+                    <p>A healthy evening snack with aromatic spices</p>
+                    <a href="#" class="recipe-link">View Recipe</a>
+                </div>
+                <div class="recipe-card">
+                    <img src="./assets/recipe-2.svg" alt="Makhana kheer recipe" loading="lazy">
+                    <h3>Makhana Kheer</h3>
+                    <p>Traditional dessert with a healthy twist</p>
+                    <a href="#" class="recipe-link">View Recipe</a>
+                </div>
+                <div class="recipe-card">
+                    <img src="./assets/recipe-3.svg" alt="Makhana trail mix" loading="lazy">
+                    <h3>Trail Mix</h3>
+                    <p>Perfect for on-the-go healthy snacking</p>
+                    <a href="#" class="recipe-link">View Recipe</a>
+                </div>
+            </div>
+            <div class="recipes__download">
+                <a href="./assets/makhana-nutrition-guide.pdf" class="btn btn--outline" download>
+                    📄 Download Nutrition Guide
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customization Section -->
+    <section class="customization">
+        <div class="container">
+            <div class="customization__content">
+                <div class="customization__text">
+                    <h2 class="section__title">Your Snack, Your Way!</h2>
+                    <p>Roast these raw makhanas at home, add your favourite flavors - be it spicy masala, desi ghee, or just a pinch of Himalayan salt. Pure, crunchy and customized for you.</p>
+                    <div class="customization__features">
+                        <div class="feature">
+                            <span class="feature__icon">🌶️</span>
+                            <h3>Spicy Masala</h3>
+                            <p>Add your favorite spice blend</p>
+                        </div>
+                        <div class="feature">
+                            <span class="feature__icon">🧈</span>
+                            <h3>Desi Ghee</h3>
+                            <p>Rich, traditional flavor</p>
+                        </div>
+                        <div class="feature">
+                            <span class="feature__icon">🧂</span>
+                            <h3>Himalayan Salt</h3>
+                            <p>Pure and natural taste</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="customization__image">
+                    <img src="./assets/customization.svg" alt="Customize your makhana" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter__content">
+                <h2>Stay Fresh with Just Makhana</h2>
+                <p>Get recipes, health tips, and exclusive offers delivered to your inbox</p>
+                <form class="newsletter__form" id="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required aria-label="Email address">
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact__content">
+                <div class="contact__info">
+                    <h2 class="section__title">Get in Touch</h2>
+                    <div class="contact__details">
+                        <p><strong>Marketed & packed by:</strong> Manviya Enterprises</p>
+                        <p><strong>Address:</strong> Anand Vihar, Tekri-Madri link road, Udaipur</p>
+                        <p><strong>Contact:</strong> +91-78913-03070</p>
+                        <p><strong>Mail Id:</strong> Manviyaenterprises@gmail.com</p>
+                    </div>
+                    <div class="contact__wholesale">
+                        <h3>Wholesale Inquiries</h3>
+                        <p>Interested in bulk orders? Contact us for special pricing.</p>
+                    </div>
+                </div>
+                <form class="contact__form" id="contact-form">
+                    <input type="text" placeholder="Your Name" required aria-label="Your name">
+                    <input type="email" placeholder="Your Email" required aria-label="Your email">
+                    <select required aria-label="Inquiry type">
+                        <option value="">Select Inquiry Type</option>
+                        <option value="general">General Question</option>
+                        <option value="wholesale">Wholesale</option>
+                        <option value="support">Customer Support</option>
+                    </select>
+                    <textarea placeholder="Your Message" rows="5" required aria-label="Your message"></textarea>
+                    <button type="submit" class="btn btn--primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <div class="logo logo--footer">
+                        <img src="./assets/logo.png" alt="Just Makhana - Hand Picked Raw Makhana" class="logo__image logo__image--footer">
+                        <div class="logo__text-wrapper">
+                            <h3 class="logo__text">Just Makhana</h3>
+                            <p class="logo__tagline">HAND PICKED RAW MAKHANA</p>
+                        </div>
+                    </div>
+                    <p>Premium quality makhana, sourced directly from farmers with love and care.</p>
+                    <div class="fssai-info">
+                        <img src="./assets/fassi_logo.png" alt="FSSAI Logo" class="fssai-logo">
+                        <p class="fssai-license">License No. 22225088000733</p>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <div class="footer__section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#shop">Shop</a></li>
+                            <li><a href="#about">Our Story</a></li>
+                            <li><a href="#recipes">Recipes</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__section">
+                        <h4>Customer Care</h4>
+                        <ul>
+                            <li><a href="#contact">Contact Us</a></li>
+                            <li><a href="#">Shipping Info</a></li>
+                            <li><a href="#">Returns</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__section">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Refund Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="WhatsApp">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 Just Makhana. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cart-modal" role="dialog" aria-labelledby="cart-title" aria-hidden="true">
+        <div class="modal__content">
+            <div class="modal__header">
+                <h2 id="cart-title">Shopping Cart</h2>
+                <button class="modal__close" aria-label="Close cart">&times;</button>
+            </div>
+            <div class="modal__body" id="cart-items">
+                <p class="cart-empty">Your cart is empty</p>
+            </div>
+            <div class="modal__footer">
+                <div class="cart-total">
+                    <strong>Total: ₹<span id="cart-total">0</span></strong>
+                </div>
+                <button class="btn btn--primary btn--full" id="checkout-btn" disabled>Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div class="modal" id="product-modal" role="dialog" aria-labelledby="product-title" aria-hidden="true">
+        <div class="modal__content modal__content--large">
+            <div class="modal__header">
+                <h2 id="product-title"></h2>
+                <button class="modal__close" aria-label="Close product details">&times;</button>
+            </div>
+            <div class="modal__body" id="product-details">
+                <!-- Product details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>

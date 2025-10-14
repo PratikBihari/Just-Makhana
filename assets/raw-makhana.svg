@@ -1,0 +1,8 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#eae8cf"/>
+  <circle cx="200" cy="120" r="40" fill="#385a51" opacity="0.9"/>
+  <circle cx="150" cy="180" r="35" fill="#66a86d" opacity="0.8"/>
+  <circle cx="250" cy="180" r="35" fill="#8ec484" opacity="0.8"/>
+  <circle cx="200" cy="220" r="30" fill="#a7d384" opacity="0.7"/>
+  <text x="200" y="270" font-family="El Messiri, serif" font-size="24" font-weight="600" text-anchor="middle" fill="#385a51">Raw Makhana</text>
+</svg>

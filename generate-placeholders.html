@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Placeholder Images</title>
+    <style>
+        .placeholder {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            font-weight: 600;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #385a51, #66a86d);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            box-shadow: 0 5px 20px rgba(56, 90, 81, 0.3);
+        }
+        .hero { width: 1200px; height: 800px; font-size: 48px; }
+        .category { width: 400px; height: 300px; font-size: 24px; }
+        .product { width: 300px; height: 300px; font-size: 18px; }
+        .story { width: 600px; height: 400px; font-size: 32px; }
+        .recipe { width: 400px; height: 300px; font-size: 20px; }
+        .og { width: 1200px; height: 630px; font-size: 36px; }
+        .container { padding: 20px; }
+        h2 { color: #385a51; font-family: 'El Messiri', serif; }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@600&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Hero Section</h2>
+        <div class="placeholder hero">
+            <div>🥜</div>
+            <div>Fresh Raw Makhana</div>
+            <div style="font-size: 24px; margin-top: 10px;">Hero Image</div>
+        </div>
+
+        <h2>Categories</h2>
+        <div class="placeholder category">
+            <div>🌾</div>
+            <div>Raw Makhana</div>
+        </div>
+        <div class="placeholder category">
+            <div>🔥</div>
+            <div>Roasted Makhana</div>
+        </div>
+        <div class="placeholder category">
+            <div>🌶️</div>
+            <div>Flavored Makhana</div>
+        </div>
+
+        <h2>Products</h2>
+        <div class="placeholder product">
+            <div>📦</div>
+            <div>Raw 250g</div>
+        </div>
+        <div class="placeholder product">
+            <div>📦</div>
+            <div>Raw 500g</div>
+        </div>
+        <div class="placeholder product">
+            <div>🔥</div>
+            <div>Roasted 250g</div>
+        </div>
+        <div class="placeholder product">
+            <div>🧂</div>
+            <div>Salt Flavored</div>
+        </div>
+        <div class="placeholder product">
+            <div>🟡</div>
+            <div>Turmeric</div>
+        </div>
+        <div class="placeholder product">
+            <div>🌶️</div>
+            <div>Chaat Masala</div>
+        </div>
+
+        <h2>Story</h2>
+        <div class="placeholder story">
+            <div>👨‍🌾</div>
+            <div>Farmers Story</div>
+        </div>
+
+        <h2>Recipes</h2>
+        <div class="placeholder recipe">
+            <div>🍽️</div>
+            <div>Spiced Recipe</div>
+        </div>
+        <div class="placeholder recipe">
+            <div>🥛</div>
+            <div>Makhana Kheer</div>
+        </div>
+        <div class="placeholder recipe">
+            <div>🥜</div>
+            <div>Trail Mix</div>
+        </div>
+
+        <h2>Social Media</h2>
+        <div class="placeholder og">
+            <div>🌿</div>
+            <div>Just Makhana</div>
+            <div style="font-size: 24px; margin-top: 10px;">Hand Picked Raw Makhana</div>
+        </div>
+    </div>
+
+    <script>
+        // Instructions for saving images
+        console.log(`
+To save these as actual image files:
+1. Right-click on each placeholder
+2. Select "Save image as..." or use browser screenshot tools
+3. Save with the following names:
+   - Hero: hero-makhana.jpg
+   - Categories: raw-makhana.jpg, roasted-makhana.jpg, flavored-makhana.jpg
+   - Products: raw-makhana-250g.jpg, raw-makhana-500g.jpg, etc.
+   - Story: farmers-story.jpg
+   - Recipes: recipe-1.jpg, recipe-2.jpg, recipe-3.jpg
+   - Social: og-image.jpg
+
+Or use this page as a reference for creating actual product photography.
+        `);
+    </script>
+</body>
+</html>

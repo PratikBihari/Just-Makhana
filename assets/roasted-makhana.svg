@@ -1,0 +1,8 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#eae8cf"/>
+  <circle cx="200" cy="120" r="40" fill="#8B4513" opacity="0.9"/>
+  <circle cx="150" cy="180" r="35" fill="#A0522D" opacity="0.8"/>
+  <circle cx="250" cy="180" r="35" fill="#CD853F" opacity="0.8"/>
+  <circle cx="200" cy="220" r="30" fill="#DEB887" opacity="0.7"/>
+  <text x="200" y="270" font-family="El Messiri, serif" font-size="24" font-weight="600" text-anchor="middle" fill="#385a51">Roasted</text>
+</svg>

@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://justmakhana.com/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+
+# Allow important pages
+Allow: /
+Allow: /shop
+Allow: /about
+Allow: /recipes
+Allow: /contact

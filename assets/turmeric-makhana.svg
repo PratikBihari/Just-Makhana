@@ -1,0 +1,11 @@
+<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="300" fill="#eae8cf"/>
+  <rect x="50" y="50" width="200" height="200" fill="#385a51" rx="10"/>
+  <rect x="60" y="60" width="180" height="180" fill="#66a86d" rx="8"/>
+  <circle cx="150" cy="120" r="25" fill="#FFD700" opacity="0.9"/>
+  <circle cx="120" cy="160" r="20" fill="#FFA500" opacity="0.8"/>
+  <circle cx="180" cy="160" r="20" fill="#FF8C00" opacity="0.8"/>
+  <text x="150" y="210" font-family="Montserrat, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="white">Turmeric</text>
+  <text x="150" y="230" font-family="Montserrat, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="white">Spiced</text>
+  <text x="150" y="250" font-family="Montserrat, sans-serif" font-size="12" text-anchor="middle" fill="white">200g</text>
+</svg>
