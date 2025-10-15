@@ -591,6 +591,7 @@ button {
   overflow: hidden;
   border-radius: var(--radius-lg);
   box-shadow: 0 15px 35px var(--shadow);
+  background: var(--neutral-cream);
 }
 
 .story__gallery-image {
@@ -609,6 +610,12 @@ button {
   opacity: 1;
 }
 
+@media (max-width: 768px) {
+  .story__gallery {
+    height: 300px;
+  }
+}
+
 .story__image img {
   border-radius: var(--radius-lg);
   box-shadow: 0 15px 35px var(--shadow);
@@ -622,6 +629,11 @@ button {
   
   .story__text h2 {
     text-align: center;
+  }
+  
+  .story__gallery {
+    height: 300px;
+    margin: 0 auto;
   }
 }
 
