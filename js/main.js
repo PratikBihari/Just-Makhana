@@ -11,6 +11,7 @@ class JustMakhanaApp {
     this.setupEventListeners();
     this.updateCartUI();
     this.startTestimonialSlider();
+    this.startStoryGallery();
     this.setupSmoothScrolling();
     this.setupAnimations();
   }
@@ -23,7 +24,7 @@ class JustMakhanaApp {
         category: 'raw',
         price: 299,
         weight: '250g',
-        image: './assets/raw-makhana-250g.svg',
+        image: './assets/raw-makhana.png',
         description: 'Pure, unprocessed fox nuts directly from Bihar farms',
         nutrition: 'High protein, low fat, rich in calcium and magnesium'
       },
@@ -33,7 +34,7 @@ class JustMakhanaApp {
         category: 'raw',
         price: 549,
         weight: '500g',
-        image: './assets/raw-makhana-500g.svg',
+        image: './assets/raw-makhana.png',
         description: 'Perfect for families who love healthy snacking',
         nutrition: 'High protein, low fat, rich in calcium and magnesium'
       },
@@ -43,7 +44,7 @@ class JustMakhanaApp {
         category: 'roasted',
         price: 349,
         weight: '250g',
-        image: './assets/roasted-makhana-250g.svg',
+        image: './assets/roasted-makhana.png',
         description: 'Perfectly roasted for extra crunch and flavor',
         nutrition: 'Enhanced taste, same nutritional benefits'
       },
@@ -53,7 +54,7 @@ class JustMakhanaApp {
         category: 'flavored',
         price: 399,
         weight: '200g',
-        image: './assets/salt-makhana.svg',
+        image: './assets/flavored-makhana.png',
         description: 'Seasoned with pure Himalayan pink salt',
         nutrition: 'Natural minerals from Himalayan salt'
       },
@@ -63,7 +64,7 @@ class JustMakhanaApp {
         category: 'flavored',
         price: 399,
         weight: '200g',
-        image: './assets/turmeric-makhana.svg',
+        image: './assets/flavored-makhana.png',
         description: 'Anti-inflammatory turmeric with aromatic spices',
         nutrition: 'Curcumin benefits with protein power'
       },
@@ -73,7 +74,7 @@ class JustMakhanaApp {
         category: 'flavored',
         price: 399,
         weight: '200g',
-        image: './assets/chaat-makhana.svg',
+        image: './assets/flavored-makhana.png',
         description: 'Tangy chaat masala for the perfect evening snack',
         nutrition: 'Digestive spices with healthy crunch'
       }
@@ -231,7 +232,7 @@ class JustMakhanaApp {
     productsGrid.innerHTML = filteredProducts.map(product => `
       <div class="product-card" data-product-id="${product.id}">
         <img src="${product.image}" alt="${product.name}" loading="lazy" 
-             onerror="this.src='./assets/placeholder-product.svg'">
+             onerror="this.src='./assets/raw-makhana.png'" style="width: 100%; height: 200px; object-fit: cover;">
         <div class="product-card__content">
           <h3>${product.name}</h3>
           <div class="product-card__price">₹${product.price}</div>
@@ -285,7 +286,7 @@ class JustMakhanaApp {
     productsGrid.innerHTML = filteredProducts.map(product => `
       <div class="product-card" data-product-id="${product.id}">
         <img src="${product.image}" alt="${product.name}" loading="lazy"
-             onerror="this.src='./assets/placeholder-product.svg'">
+             onerror="this.src='./assets/raw-makhana.png'" style="width: 100%; height: 200px; object-fit: cover;">
         <div class="product-card__content">
           <h3>${product.name}</h3>
           <div class="product-card__price">₹${product.price}</div>
@@ -316,8 +317,8 @@ class JustMakhanaApp {
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
         <div>
           <img src="${product.image}" alt="${product.name}" 
-               style="width: 100%; border-radius: 12px; margin-bottom: 1rem;"
-               onerror="this.src='./assets/placeholder-product.svg'">
+               style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem;"
+               onerror="this.src='./assets/raw-makhana.png'">
         </div>
         <div>
           <div style="font-size: 1.5rem; font-weight: 600; color: var(--secondary-green); margin-bottom: 1rem;">
@@ -425,7 +426,7 @@ class JustMakhanaApp {
     cartItems.innerHTML = this.cart.map(item => `
       <div class="cart-item">
         <img src="${item.image}" alt="${item.name}" 
-             onerror="this.src='./assets/placeholder-product.svg'">
+             onerror="this.src='./assets/raw-makhana.png'" style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px;">
         <div class="cart-item__info">
           <div class="cart-item__name">${item.name}</div>
           <div class="cart-item__price">₹${item.price} × ${item.quantity}</div>
@@ -503,6 +504,19 @@ class JustMakhanaApp {
     });
 
     this.currentTestimonial = index;
+  }
+
+  startStoryGallery() {
+    const storyImages = document.querySelectorAll('.story__gallery-image');
+    if (storyImages.length === 0) return;
+
+    let currentIndex = 0;
+    
+    setInterval(() => {
+      storyImages[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % storyImages.length;
+      storyImages[currentIndex].classList.add('active');
+    }, 3000);
   }
 
   showNotification(message, type = 'info') {
