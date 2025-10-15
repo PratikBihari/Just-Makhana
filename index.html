@@ -50,13 +50,13 @@
     <header class="header" role="banner">
         <nav class="nav container" aria-label="Main navigation">
             <div class="nav__brand">
-                <div class="logo">
+                <a href="#home" class="logo">
                     <img src="./assets/logo.png" alt="Just Makhana - Hand Picked Raw Makhana" class="logo__image">
                     <div class="logo__text-wrapper">
                         <h1 class="logo__text">Just Makhana</h1>
                         <p class="logo__tagline">HAND PICKED RAW MAKHANA</p>
                     </div>
-                </div>
+                </a>
             </div>
             
             <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -116,6 +116,33 @@
                     <p>Natural spices and seasonings</p>
                     <button class="btn btn--outline" onclick="showProducts('flavored')">Shop Now</button>
                 </div>
+            </div>
+            <div class="categories__slider" id="categories-slider">
+                <button class="slider-btn slider-btn--prev" onclick="app.prevCategory()" aria-label="Previous category">‹</button>
+                <div class="category-card active">
+                    <img src="./assets/raw-makhana.png" alt="Raw makhana" loading="lazy">
+                    <h3>Raw Makhana</h3>
+                    <p>Pure, unprocessed fox nuts</p>
+                    <button class="btn btn--outline" onclick="showProducts('raw')">Shop Now</button>
+                </div>
+                <div class="category-card">
+                    <img src="./assets/roasted-makhana.png" alt="Roasted makhana" loading="lazy">
+                    <h3>Roasted Makhana</h3>
+                    <p>Lightly roasted for extra crunch</p>
+                    <button class="btn btn--outline" onclick="showProducts('roasted')">Shop Now</button>
+                </div>
+                <div class="category-card">
+                    <img src="./assets/flavored-makhana.png" alt="Flavored makhana varieties" loading="lazy">
+                    <h3>Flavored Varieties</h3>
+                    <p>Natural spices and seasonings</p>
+                    <button class="btn btn--outline" onclick="showProducts('flavored')">Shop Now</button>
+                </div>
+                <button class="slider-btn slider-btn--next" onclick="app.nextCategory()" aria-label="Next category">›</button>
+            </div>
+            <div class="categories__dots">
+                <button class="dot active" onclick="showCategory(0)" aria-label="Show Raw Makhana"></button>
+                <button class="dot" onclick="showCategory(1)" aria-label="Show Roasted Makhana"></button>
+                <button class="dot" onclick="showCategory(2)" aria-label="Show Flavored Varieties"></button>
             </div>
         </div>
     </section>
@@ -222,6 +249,33 @@
                     <a href="#" class="recipe-link">View Recipe</a>
                 </div>
             </div>
+            <div class="recipes__slider" id="recipes-slider">
+                <button class="slider-btn slider-btn--prev" onclick="app.prevRecipe()" aria-label="Previous recipe">‹</button>
+                <div class="recipe-card active">
+                    <img src="./assets/recipe-1.png" alt="Spiced makhana recipe" loading="lazy" style="width: 100%; height: 180px; object-fit: cover;">
+                    <h3>Spiced Makhana</h3>
+                    <p>A healthy evening snack with aromatic spices</p>
+                    <a href="#" class="recipe-link">View Recipe</a>
+                </div>
+                <div class="recipe-card">
+                    <img src="./assets/recipe-2.png" alt="Makhana kheer recipe" loading="lazy" style="width: 100%; height: 180px; object-fit: cover;">
+                    <h3>Makhana Kheer</h3>
+                    <p>Traditional dessert with a healthy twist</p>
+                    <a href="#" class="recipe-link">View Recipe</a>
+                </div>
+                <div class="recipe-card">
+                    <img src="./assets/recipe-3.png" alt="Makhana trail mix" loading="lazy" style="width: 100%; height: 180px; object-fit: cover;">
+                    <h3>Trail Mix</h3>
+                    <p>Perfect for on-the-go healthy snacking</p>
+                    <a href="#" class="recipe-link">View Recipe</a>
+                </div>
+                <button class="slider-btn slider-btn--next" onclick="app.nextRecipe()" aria-label="Next recipe">›</button>
+            </div>
+            <div class="recipes__dots">
+                <button class="dot active" onclick="showRecipe(0)" aria-label="Show Spiced Makhana recipe"></button>
+                <button class="dot" onclick="showRecipe(1)" aria-label="Show Makhana Kheer recipe"></button>
+                <button class="dot" onclick="showRecipe(2)" aria-label="Show Trail Mix recipe"></button>
+            </div>
             <div class="recipes__download">
                 <a href="./assets/Nutrition_Guide.pdf" class="btn btn--outline" target="_blank" rel="noopener noreferrer">
                     📄 Download Nutrition Guide
@@ -285,8 +339,8 @@
                     <div class="contact__details">
                         <p><strong>Marketed & packed by:</strong> Manviya Enterprises</p>
                         <p><strong>Address:</strong> Anand Vihar, Tekri-Madri link road, Udaipur</p>
-                        <p><strong>Contact:</strong> +91-78913-03070</p>
-                        <p><strong>Mail Id:</strong> Manviyaenterprises@gmail.com</p>
+                        <p><strong>Contact:</strong> <a href="tel:+917891303070">+91-78913-03070</a></p>
+                        <p><strong>Mail Id:</strong> <a href="mailto:Manviyaenterprises@gmail.com">Manviyaenterprises@gmail.com</a></p>
                     </div>
                     <div class="contact__wholesale">
                         <h3>Wholesale Inquiries</h3>
@@ -302,7 +356,7 @@
                         <option value="wholesale">Wholesale</option>
                         <option value="support">Customer Support</option>
                     </select>
-                    <textarea placeholder="Your Message" rows="5" required aria-label="Your message"></textarea>
+                    <textarea placeholder="Your Message" rows="3" required aria-label="Your message"></textarea>
                     <button type="submit" class="btn btn--primary">Send Message</button>
                 </form>
             </div>

@@ -361,13 +361,17 @@ button {
   
   .hero__actions {
     justify-content: center;
-    flex-direction: column;
-    gap: var(--spacing-sm);
+    flex-direction: row;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
   }
   
   .hero__actions .btn {
-    width: 100%;
-    max-width: 280px;
+    flex: 1;
+    min-width: 130px;
+    max-width: 160px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.9rem;
   }
 }
 
@@ -446,39 +450,57 @@ button {
   gap: var(--spacing-xl);
 }
 
+/* Categories Slider for Mobile */
+.categories__slider {
+  display: none;
+}
+
+.categories__dots {
+  display: none;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
 @media (max-width: 768px) {
   .categories {
     padding: var(--spacing-lg) 0;
   }
   
   .categories__grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-    max-width: 350px;
+    display: none;
+  }
+  
+  .categories__slider {
+    display: block;
+    position: relative;
+    max-width: 320px;
     margin: 0 auto;
   }
   
-  .category-card {
+  .categories__slider .category-card {
+    display: none;
     padding: var(--spacing-md);
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 5px 20px var(--shadow);
   }
   
-  .category-card img {
+  .categories__slider .category-card.active {
+    display: block;
+  }
+  
+  .categories__slider .category-card img {
     height: 180px;
     width: 100%;
-    max-width: 280px;
-  }
-  
-  .category-card h3 {
-    margin: var(--spacing-sm) 0;
-  }
-  
-  .category-card p {
+    object-fit: cover;
+    border-radius: var(--radius-md);
     margin-bottom: var(--spacing-md);
-    text-align: center;
+  }
+  
+  .categories__dots {
+    display: flex;
   }
 }
 
@@ -867,33 +889,77 @@ button {
   margin-bottom: var(--spacing-xl);
 }
 
+.recipes__slider {
+  display: none;
+}
+
+.recipes__dots {
+  display: none;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin: var(--spacing-md) 0;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--primary-green);
+  color: var(--white);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition);
+  box-shadow: 0 2px 10px var(--shadow);
+}
+
+.slider-btn:hover {
+  background: var(--secondary-green);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slider-btn--prev {
+  left: -20px;
+}
+
+.slider-btn--next {
+  right: -20px;
+}
+
 @media (max-width: 768px) {
   .recipes {
     padding: var(--spacing-lg) 0;
   }
   
   .recipes__grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-    max-width: 350px;
-    margin: 0 auto var(--spacing-lg);
+    display: none;
   }
   
-  .recipe-card {
+  .recipes__slider {
+    display: block;
+    position: relative;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  
+  .recipes__slider .recipe-card {
+    display: none;
     text-align: center;
   }
   
-  .recipe-card img {
-    height: 180px;
-    width: 100%;
+  .recipes__slider .recipe-card.active {
+    display: block;
   }
   
-  .recipe-card h3 {
-    text-align: center;
-  }
-  
-  .recipe-card p {
-    text-align: center;
+  .recipes__dots {
+    display: flex;
   }
   
   .recipes__download {
@@ -1052,10 +1118,33 @@ button {
   }
   
   .customization__features {
-    grid-template-columns: 1fr;
-    max-width: 300px;
-    margin: var(--spacing-lg) auto 0;
-    gap: var(--spacing-sm);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--spacing-xs);
+    max-width: 100%;
+    margin: var(--spacing-md) auto 0;
+  }
+  
+  .customization__features .feature {
+    flex: 1;
+    padding: var(--spacing-xs);
+    min-width: 0;
+  }
+  
+  .customization__features .feature h3 {
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .customization__features .feature p {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+  
+  .customization__features .feature__icon {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-xs);
   }
   
   .customization__image {
@@ -1210,12 +1299,12 @@ button {
 
 @media (max-width: 768px) {
   .contact {
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-md) 0;
   }
   
   .contact__content {
     grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
   }
   
   .contact__info {
@@ -1224,28 +1313,56 @@ button {
   
   .contact__info h2 {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: var(--spacing-md);
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-sm);
   }
   
   .contact__details {
     text-align: center;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    background: var(--white);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
   }
   
   .contact__details p {
     margin-bottom: var(--spacing-xs);
+    line-height: 1.4;
   }
   
   .contact__wholesale {
     text-align: center;
-    margin: var(--spacing-lg) auto;
+    margin: var(--spacing-sm) auto;
     max-width: 90%;
+    padding: var(--spacing-sm);
+  }
+  
+  .contact__wholesale h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .contact__wholesale p {
+    font-size: 0.9rem;
+    margin: 0;
   }
   
   .contact__form {
     max-width: 350px;
     margin: 0 auto;
+  }
+  
+  .contact__form input,
+  .contact__form select,
+  .contact__form textarea {
+    padding: var(--spacing-xs);
+    font-size: 0.9rem;
+  }
+  
+  .contact__form textarea {
+    rows: 3;
+    min-height: 80px;
   }
 }
 
@@ -1421,8 +1538,35 @@ button {
   }
   
   .footer__links {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+  }
+  
+  .footer__section {
+    flex: 1;
+    min-width: 120px;
+  }
+  
+  .footer__section h4 {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .footer__section ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .footer__section li {
+    margin-bottom: 0;
+  }
+  
+  .footer__section a {
+    font-size: 0.85rem;
+    line-height: 1.3;
   }
   
   .footer__section {
@@ -1935,6 +2079,32 @@ select:focus,
 textarea:focus {
   outline: 2px solid var(--secondary-green);
   outline-offset: 2px;
+}
+
+/* Contact links styling */
+.contact__details a {
+  color: var(--secondary-green);
+  text-decoration: none;
+}
+
+.contact__details a:hover {
+  color: var(--primary-green);
+  text-decoration: underline;
+}
+
+.contact__details a:focus {
+  outline: none;
+  color: var(--primary-green);
+  text-decoration: underline;
+}
+
+/* Logo link styling */
+.logo:focus {
+  outline: none;
+}
+
+.logo:hover {
+  opacity: 0.8;
 }
 
 /* Print Styles */

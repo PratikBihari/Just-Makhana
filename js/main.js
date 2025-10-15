@@ -4,6 +4,8 @@ class JustMakhanaApp {
     this.cart = JSON.parse(localStorage.getItem('justMakhanaCart')) || [];
     this.products = this.getProducts();
     this.currentTestimonial = 0;
+    this.currentCategory = 0;
+    this.currentRecipe = 0;
     this.init();
   }
 
@@ -14,6 +16,7 @@ class JustMakhanaApp {
     this.startStoryGallery();
     this.setupSmoothScrolling();
     this.setupAnimations();
+    this.setupTouchSliders();
   }
 
   getProducts() {
@@ -150,6 +153,60 @@ class JustMakhanaApp {
     }
   }
 
+  showCategory(index) {
+    const categoryCards = document.querySelectorAll('.categories__slider .category-card');
+    const dots = document.querySelectorAll('.categories__dots .dot');
+
+    categoryCards.forEach((card, i) => {
+      card.classList.toggle('active', i === index);
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+
+    this.currentCategory = index;
+  }
+
+  showRecipe(index) {
+    const recipeCards = document.querySelectorAll('.recipes__slider .recipe-card');
+    const dots = document.querySelectorAll('.recipes__dots .dot');
+
+    recipeCards.forEach((card, i) => {
+      card.classList.toggle('active', i === index);
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+
+    this.currentRecipe = index;
+  }
+
+  nextRecipe() {
+    const totalRecipes = 3;
+    this.currentRecipe = (this.currentRecipe + 1) % totalRecipes;
+    this.showRecipe(this.currentRecipe);
+  }
+
+  prevRecipe() {
+    const totalRecipes = 3;
+    this.currentRecipe = (this.currentRecipe - 1 + totalRecipes) % totalRecipes;
+    this.showRecipe(this.currentRecipe);
+  }
+
+  nextCategory() {
+    const totalCategories = 3;
+    this.currentCategory = (this.currentCategory + 1) % totalCategories;
+    this.showCategory(this.currentCategory);
+  }
+
+  prevCategory() {
+    const totalCategories = 3;
+    this.currentCategory = (this.currentCategory - 1 + totalCategories) % totalCategories;
+    this.showCategory(this.currentCategory);
+  }
+
   setupProductFilters() {
     const weightFilter = document.getElementById('weight-filter');
     const priceFilter = document.getElementById('price-filter');
@@ -171,6 +228,42 @@ class JustMakhanaApp {
           this.closeModal(activeModal);
         }
       }
+    });
+  }
+
+  setupTouchSliders() {
+    const sliders = ['#categories-slider', '#recipes-slider'];
+    
+    sliders.forEach(selector => {
+      const slider = document.querySelector(selector);
+      if (!slider) return;
+      
+      let startX = 0;
+      let startY = 0;
+      
+      slider.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+      });
+      
+      slider.addEventListener('touchend', (e) => {
+        const endX = e.changedTouches[0].clientX;
+        const endY = e.changedTouches[0].clientY;
+        const diffX = startX - endX;
+        const diffY = startY - endY;
+        
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+          if (diffX > 0) {
+            // Swipe left - next
+            if (selector === '#categories-slider') this.nextCategory();
+            if (selector === '#recipes-slider') this.nextRecipe();
+          } else {
+            // Swipe right - previous
+            if (selector === '#categories-slider') this.prevCategory();
+            if (selector === '#recipes-slider') this.prevRecipe();
+          }
+        }
+      });
     });
   }
 
@@ -567,6 +660,8 @@ class JustMakhanaApp {
 // Global functions for onclick handlers
 window.showProducts = (category) => window.app.showProducts(category);
 window.showTestimonial = (index) => window.app.showTestimonial(index);
+window.showCategory = (index) => window.app.showCategory(index);
+window.showRecipe = (index) => window.app.showRecipe(index);
 
 // Initialize app when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
