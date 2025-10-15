@@ -666,6 +666,11 @@ window.showRecipe = (index) => window.app.showRecipe(index);
 // Initialize app when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   window.app = new JustMakhanaApp();
+  
+  // Scroll to home section on page load/reload
+  setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 100);
 });
 
 // Service Worker Registration for PWA capabilities
